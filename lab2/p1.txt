@@ -2,9 +2,9 @@ GO
 
 def x : float;
 def y : int = 7;
-def z :int=-1;
+def z :int=-1,5;
 
-x = y^(-2) + z^3;
+x = y^(-2) + z^0,3;
 
 print(`The squared hypotenuse is $x$ ok $y$.`);
 

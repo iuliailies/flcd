@@ -6,7 +6,7 @@ from tokenListParser import *
 class Scanner:
 
     def __init__(self) -> None:
-        self.cases = ["=+", "<+", ">+", "<=+", ">=+", "==+", "!=+", "=-", "<-", ">-", "<=-", ">=-", "==-", "!=-"]
+        self.concatenationCases = ["=+", "<+", ">+", "<=+", ">=+", "==+", "!=+", "=-", "<-", ">-", "<=-", ">=-", "==-", "!=-"]
         self.numberSignCases = ["=", "(", "<", ">"]
 
     @staticmethod
@@ -15,7 +15,7 @@ class Scanner:
 
     @staticmethod
     def isConstant(token):
-        return re.match(r'^(0|[+-]?[1-9][0-9]*)$|^`.`$|^`.*`$', token) is not None
+        return re.match(r'^(0|[+-]?[1-9][0-9]*)$|^(0|[+-]?[1-9][0-9]*),[0-9]*|^`.`$|^`.*`$', token) is not None
 
     @staticmethod
     def getStringToken(line, index):

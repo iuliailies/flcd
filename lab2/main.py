@@ -32,7 +32,7 @@ class Main:
                             if temp == -1 or tokens[temp] in self.scanner.numberSignCases:
                                 extra = tokens[i]
                                 continue
-                    elif tokens[i] in self.scanner.cases and i < len(tokens)-1:
+                    elif tokens[i] in self.scanner.concatenationCases and i < len(tokens)-1:
                         if re.match("[1-9]", tokens[i+1]):
                             extra = tokens[i][-1]
                             continue
