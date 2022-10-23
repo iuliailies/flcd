@@ -1,0 +1,24 @@
+program ::== “GO” {decllist | stmtlist} “BYE”
+decllist ::= declaration | declaration decllist
+declaration ::= “def” IDENTIFIER ":" type [“=” expression] “;”
+type1 ::= "boolean" | "string" | "int" | "float"
+arraydecl ::= "[" type1 "]"
+type  ::= type1|arraydecl
+stmtlist ::= stmt | stmt stmtlist
+stmt ::= simplstmt | structstmt
+simplstmt ::= assignstmt | iostmt
+assignstmt ::= IDENTIFIER ("=" | “+=” | “-=” | “*=”) expression “;”
+expression = number_expression | string_expression | ternary_expression | BOOLEAN
+number_expression ::= number_expression ("+ | “-") term | term
+term ::= term ("*" | “/” | “%” | “//” | “^”) factor | factor
+factor ::= "(" number_expression ")" | IDENTIFIER | INTEGER | FLOAT
+string_expression = STRING | IDENTIFIER | “`”{“$” IDENTIFIER “$” | CHAR} “`”
+ternary_expression = condition “?” expression “:” expression
+iostmt ::= "read" “(“ IDENTIFIER ”)” “;”| "print" "(" string_expression ")" “;”
+structstmt ::= ifstmt | whilestmt | exitstmt
+body ::= “{”  stmtlist “}” | stmt
+ifstmt ::= "if" “(” condition “)” body ["else" body]
+whilestmt ::= "while" “(” condition “)”  body
+exitstmt ::== “exit” expression “;”
+condition ::= expression RELATION expression
+RELATION ::= "<" | "<=" | "==" | ">=" | ">" | “!=”

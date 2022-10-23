@@ -1,0 +1,76 @@
+## Program p1 : find the squared hypothenuse, knowing the legs
+
+GO
+
+def x : float;
+def y : int = 7;
+def z : int = 1;
+
+x = y^2 + z^2;
+
+print(`The squared hypothenuse is $x$`);
+
+BYE
+
+
+## Program p2: check if number is prime
+
+GO
+
+def number: int;
+def isPrime: boolean = true;
+
+print(`Add your number: `);
+read(number);
+
+def d : int = 2;
+while(d <= n/2) {
+	if(n % d == 0) isPrime = false;
+	d += 1;
+}
+
+print(isPrime == true ? `$number$ is prime.` : `$number$ is not prime.`);
+
+BYE
+
+
+
+## Program p3: arithmetic mean of unknown number of numbers
+
+GO
+
+def numbers : [int] = [];
+def input : int = -1;
+def sum : int = 0;
+def no : int = 0;
+
+print(`Input numebrs, type 0 to stop:`);
+
+while(input != 0) {
+	print(`New number: `);
+	read(input);
+	sum += input;
+	no += 1;
+}
+
+def result : float = sum//no;
+
+print(`Result $result$`);
+
+BYE
+
+
+## Program perr
+
+GO
+
+def x : float;
+def x_1 : int = 7;
+def x_2 : int = 1;  ## "_" not allowed in variable name
+
+x = rad(x_1^2 + x_2^2);
+
+printf(`The hypothenuse is $x$`); ## printf instead of print
+
+BYE
+
