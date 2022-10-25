@@ -34,10 +34,12 @@ class Scanner:
             if (line[index] == '`' and quotes == 2) or line[index] == '$':
                 if idSeparators % 2:
                     token += '`'
-                    tokens.append(token)
+                    if len(token)>2:
+                        tokens.append(token)
                     token = ''
                 else:
-                    tokens.append(token)
+                    if len(token)>2:
+                        tokens.append(token)
                     token = '`'
 
             index += 1
