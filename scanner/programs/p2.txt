@@ -1,0 +1,17 @@
+GO
+
+def number: int;
+def isPrime: boolean = true;
+
+print(`Add your number: `);
+read(number);
+
+def d : int = 2;
+while(d <= n/2) {
+	if(n % d == 0) isPrime = false;
+	d += 1;
+}
+
+print(isPrime == true ? `$number$ is prime.` : `$number$ is not prime.`);
+
+BYE

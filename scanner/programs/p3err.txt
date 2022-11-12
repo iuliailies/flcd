@@ -1,0 +1,11 @@
+GO
+
+def x : float;
+def x_1 : int = 7;
+def x_2 : int = 1;
+
+x = rad(x_1^2 + x_2^2);
+
+printf(`The hypothenuse is $x$`);
+
+BYE
