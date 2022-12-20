@@ -1,0 +1,30 @@
+N = program tempDecl declList declaration variableDeclaration constDeclaration type1 arrayDecl type stmtList stmt simplStmt assignStmt expression term factor ioStmt stringExp structStmt ifStmt tempElifStmt elseStmt elifStmt whileStmt condition relation
+E = + - * / < <= = >= > ?: == % ! != @ [ ] { } # “ ” ‘ ’ ; ( ) func Int String Bool Char if elif else let var ret True False read print loop GO STOP identifier constant integer string boolean E
+S = program
+P =
+program -> GO tempDecl STOP
+tempDecl -> E | declList tempDecl | stmtList tempDecl
+declList -> declaration | declaration declList
+declaration -> variableDeclaration | constDeclaration
+variableDeclaration -> var identifier @ type = expression ; | var identifier @ type ;
+constDeclaration -> let identifier @ type = expression ;
+type1 -> Bool | Int | Char | String
+arrayDecl -> [ type1 ]
+type -> type1 | arrayDecl
+stmtList -> stmt | stmt stmtList
+stmt -> simplStmt | structStmt
+simplStmt -> assignStmt | ioStmt
+assignStmt -> identifier = expression ;
+expression -> term + expression | term - expression | term | boolean
+term -> factor * term | factor / term | factor % term | factor
+factor -> ( expression ) | identifier | integer
+ioStmt -> read ( identifier ) ; | print ( stringExp ) ;
+stringExp -> string | identifier
+structStmt -> ifStmt | whileStmt
+ifStmt -> if condition { stmtList } tempElifStmt | if condition { stmtList } tempElifStmt elseStmt
+tempElifStmt -> E | tempElifStmt elifStmt
+elseStmt -> else { stmtList }
+elifStmt -> elif condition { stmtList }
+whileStmt -> loop condition { stmtList }
+condition -> expression relation expression
+relation -> < | <= | = | >= | > | !=

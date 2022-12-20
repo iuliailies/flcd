@@ -1,0 +1,8 @@
+GO
+var n@Int;
+read(n);
+let lastDigit@Int = n % 10;
+print(lastDigit);
+print('hello there');
+print('a');
+STOP
