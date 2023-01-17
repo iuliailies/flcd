@@ -1,0 +1,8 @@
+GO
+def x : int;
+def y : int = 7 ;
+def z : int = -1 ;
+x = y^2 + z^(-2);
+print(`The squared hypothenuse is`);
+print(x);
+BYE
